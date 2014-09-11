@@ -7,7 +7,7 @@ game.nodes =
 		title:'A time machine adventure game',
 		text:'You discover a time machine in your friend\'s walk in closet while she is out of town! You believe she invented it. It is clearly	a time machine as it is labeled as such! You are about to try it out.',
 		image:'still_at_home.png',
-		sound:''
+		sound:'So_time_machine'
 	},
 	{ // 1
 		name:'dinosaurs',

@@ -11,7 +11,9 @@ function init() {
 	G.currImageEl = document.getElementById('current-image');
 	G.currTextEl = document.getElementById('current-text');
 	G.currChoicesEl = document.getElementById('current-choices-ul');
-
+	G.audioEl = document.getElementById('audio-player');
+	
+	// Start a new game
 	newGame(G);
 }
 
@@ -26,11 +28,12 @@ function choiceMade(choiceNum) {
 	newText = n.text;
 	newImage = n.image;
 	newChoices = n.children;
+	sound = n.sound;
 
-	setPageStuff(newTitle, newText, newImage, newChoices);
+	setPageStuff(newTitle, newText, newImage, newChoices, sound);
 }
 
-function setPageStuff(title, text, image, choices) {
+function setPageStuff(title, text, image, choices, sound) {
 	G.currTitleEl.innerHTML = title;
 	G.currTextEl.innerHTML = text;
 	G.currImageEl.src = image;
@@ -45,5 +48,9 @@ function setPageStuff(title, text, image, choices) {
 			"</button></li>"
 		});
 		G.currChoicesEl.innerHTML = choiceLiString;
+		if(sound != '') {
+			// Wonderful audio is me playing guitar
+			G.audioEl.innerHTML = "<audio autoplay loop><source src='" + sound + ".ogg' type='audio/ogg'><source src='" + sound + ".mp3' type='audio/mpeg'></audio>";
+		}
 	}
 }
